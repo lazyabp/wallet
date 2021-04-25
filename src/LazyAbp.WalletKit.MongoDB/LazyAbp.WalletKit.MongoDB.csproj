@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>LazyAbp.WalletKit</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.MongoDB" Version="4.3.0" />
+    <ProjectReference Include="..\LazyAbp.WalletKit.Domain\LazyAbp.WalletKit.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
