@@ -2,12 +2,13 @@
   <PropertyGroup> 
     <LangVersion>latest</LangVersion> 
     <Version>0.0.1</Version>
+    <AbpVersion>4.3.0</AbpVersion>
     <Authors>LazyAbp</Authors>
     <NoWarn>$(NoWarn);CS1591;CS0436</NoWarn>
-    <PackageProjectUrl>https://github.com/lazyabp/</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/lazyabp/wallet</PackageProjectUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <RepositoryType>git</RepositoryType>
-    <RepositoryUrl>https://github.com/lazyabp/</RepositoryUrl>
+    <RepositoryUrl>https://github.com/lazyabp/wallet</RepositoryUrl>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
