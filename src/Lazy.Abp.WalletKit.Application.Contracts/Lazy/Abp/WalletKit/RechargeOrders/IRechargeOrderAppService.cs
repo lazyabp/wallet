@@ -10,11 +10,11 @@ namespace Lazy.Abp.WalletKit.RechargeOrders
     {
         Task<RechargeOrderDto> GetAsync(Guid id);
 
-        Task<PagedResultDto<RechargeOrderDto>> GetListAsync(GetRechargeOrderListRequestDto input);
+        Task<PagedResultDto<RechargeOrderDto>> GetListAsync(RechargeOrderListRequestDto input);
 
-        Task<PagedResultDto<RechargeOrderDto>> GetManagementListAsync(GetRechargeOrderListRequestDto input);
+        Task<PagedResultDto<RechargeOrderDto>> GetManagementListAsync(RechargeOrderListRequestDto input);
 
-        Task<RechargeOrderDto> CreateAsync(CreateUpdateRechargeOrderDto input);
+        Task<RechargeOrderDto> CreateAsync(RechargeOrderCreateUpdateDto input);
 
         Task<RechargeOrderDto> AddItemAsync(Guid id, ItemRequestDto input);
 

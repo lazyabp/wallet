@@ -5,7 +5,7 @@ using Volo.Abp.Application.Dtos;
 
 namespace Lazy.Abp.WalletKit.PaymentSettings.Dtos
 {
-    public class GetPaymentSettingListRequestDto : PagedAndSortedResultRequestDto
+    public class PaymentSettingListRequestDto : PagedAndSortedResultRequestDto
     {
        public PaymentGateway? Gateway { get; set; }
 

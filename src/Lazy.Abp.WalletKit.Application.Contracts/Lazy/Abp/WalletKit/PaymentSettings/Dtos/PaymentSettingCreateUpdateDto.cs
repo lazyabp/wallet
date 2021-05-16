@@ -3,7 +3,7 @@ using System;
 namespace Lazy.Abp.WalletKit.PaymentSettings.Dtos
 {
     [Serializable]
-    public class CreateUpdatePaymentSettingDto
+    public class PaymentSettingCreateUpdateDto
     {
         public PaymentGateway Gateway { get; set; }
 

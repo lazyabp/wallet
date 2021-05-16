@@ -31,20 +31,20 @@ namespace Lazy.Abp.WalletKit.RechargeProducts
         }
 
         [HttpGet]
-        public Task<PagedResultDto<RechargeProductDto>> GetListAsync(GetRechargeProductListRequestDto input)
+        public Task<PagedResultDto<RechargeProductDto>> GetListAsync(RechargeProductListRequestDto input)
         {
             return _service.GetListAsync(input);
         }
 
         [HttpPost]
-        public Task<RechargeProductDto> CreateAsync(CreateUpdateRechargeProductDto input)
+        public Task<RechargeProductDto> CreateAsync(RechargeProductCreateUpdateDto input)
         {
             return _service.CreateAsync(input);
         }
 
         [HttpPut]
         [Route("{id}")]
-        public Task<RechargeProductDto> UpdateAsync(Guid id, CreateUpdateRechargeProductDto input)
+        public Task<RechargeProductDto> UpdateAsync(Guid id, RechargeProductCreateUpdateDto input)
         {
             return _service.UpdateAsync(id, input);
         }

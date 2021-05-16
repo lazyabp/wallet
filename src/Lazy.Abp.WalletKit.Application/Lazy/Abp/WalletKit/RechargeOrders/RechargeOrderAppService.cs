@@ -34,7 +34,7 @@ namespace Lazy.Abp.WalletKit.RechargeOrders
         }
 
         [Authorize(WalletKitPermissions.RechargeOrder.Default)]
-        public async Task<PagedResultDto<RechargeOrderDto>> GetListAsync(GetRechargeOrderListRequestDto input)
+        public async Task<PagedResultDto<RechargeOrderDto>> GetListAsync(RechargeOrderListRequestDto input)
         {
             var count = await _repository.GetCountAsync(CurrentUser.GetId(), input.Gateway, input.Status, input.IsClosed,
                 input.MinAmount, input.MaxAmount, input.CreationAfter, input.CreationBefore, input.Filter);
@@ -49,7 +49,7 @@ namespace Lazy.Abp.WalletKit.RechargeOrders
         }
 
         [Authorize(WalletKitPermissions.RechargeOrder.Management)]
-        public async Task<PagedResultDto<RechargeOrderDto>> GetManagementListAsync(GetRechargeOrderListRequestDto input)
+        public async Task<PagedResultDto<RechargeOrderDto>> GetManagementListAsync(RechargeOrderListRequestDto input)
         {
             var count = await _repository.GetCountAsync(null, input.Gateway, input.Status, input.IsClosed,
                 input.MinAmount, input.MaxAmount, input.CreationAfter, input.CreationBefore, input.Filter);
@@ -64,7 +64,7 @@ namespace Lazy.Abp.WalletKit.RechargeOrders
         }
 
         [Authorize(WalletKitPermissions.RechargeOrder.Create)]
-        public async Task<RechargeOrderDto> CreateAsync(CreateUpdateRechargeOrderDto input)
+        public async Task<RechargeOrderDto> CreateAsync(RechargeOrderCreateUpdateDto input)
         {
             var order = new RechargeOrder(GuidGenerator.Create(), CurrentUser.TenantId, null);
             var productIds = order.Items.Select(q => q.RechargeProductId).ToList();

@@ -31,27 +31,27 @@ namespace Lazy.Abp.WalletKit.WithdrawAccounts
         }
 
         [HttpGet]
-        public Task<PagedResultDto<WithdrawAccountDto>> GetListAsync(GetWithdrawAccountListRequestDto input)
+        public Task<PagedResultDto<WithdrawAccountDto>> GetListAsync(WithdrawAccountListRequestDto input)
         {
             return _service.GetListAsync(input);
         }
 
         [HttpGet]
         [Route("management")]
-        public Task<PagedResultDto<WithdrawAccountDto>> GetManagementListAsync(GetWithdrawAccountListRequestDto input)
+        public Task<PagedResultDto<WithdrawAccountDto>> GetManagementListAsync(WithdrawAccountListRequestDto input)
         {
             return _service.GetManagementListAsync(input);
         }
 
         [HttpPost]
-        public Task<WithdrawAccountDto> CreateAsync(CreateUpdateWithdrawAccountDto input)
+        public Task<WithdrawAccountDto> CreateAsync(WithdrawAccountCreateUpdateDto input)
         {
             return _service.CreateAsync(input);
         }
 
         [HttpPut]
         [Route("{id}")]
-        public Task<WithdrawAccountDto> UpdateAsync(Guid id, CreateUpdateWithdrawAccountDto input)
+        public Task<WithdrawAccountDto> UpdateAsync(Guid id, WithdrawAccountCreateUpdateDto input)
         {
             return _service.UpdateAsync(id, input);
         }

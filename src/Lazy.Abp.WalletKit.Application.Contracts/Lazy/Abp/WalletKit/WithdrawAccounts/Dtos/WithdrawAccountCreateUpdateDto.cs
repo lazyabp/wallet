@@ -3,7 +3,7 @@ using System;
 namespace Lazy.Abp.WalletKit.WithdrawAccounts.Dtos
 {
     [Serializable]
-    public class CreateUpdateWithdrawAccountDto
+    public class WithdrawAccountCreateUpdateDto
     {
         public AccountType AccountType { get; set; }
 

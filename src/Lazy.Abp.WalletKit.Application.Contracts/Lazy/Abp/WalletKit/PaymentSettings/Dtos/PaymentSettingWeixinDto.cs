@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Lazy.Abp.WalletKit.PaymentSettings.Dtos
 {
-    public class PaymentSettingWeixinDto : CreateUpdatePaymentSettingDto
+    public class PaymentSettingWeixinDto : PaymentSettingCreateUpdateDto
     {
         public WeiXinSetting Settings { get; set; }
     }

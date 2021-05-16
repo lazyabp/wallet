@@ -10,13 +10,13 @@ namespace Lazy.Abp.WalletKit.WithdrawAccounts
     {
         Task<WithdrawAccountDto> GetAsync(Guid id);
 
-        Task<PagedResultDto<WithdrawAccountDto>> GetListAsync(GetWithdrawAccountListRequestDto input);
+        Task<PagedResultDto<WithdrawAccountDto>> GetListAsync(WithdrawAccountListRequestDto input);
 
-        Task<PagedResultDto<WithdrawAccountDto>> GetManagementListAsync(GetWithdrawAccountListRequestDto input);
+        Task<PagedResultDto<WithdrawAccountDto>> GetManagementListAsync(WithdrawAccountListRequestDto input);
 
-        Task<WithdrawAccountDto> CreateAsync(CreateUpdateWithdrawAccountDto input);
+        Task<WithdrawAccountDto> CreateAsync(WithdrawAccountCreateUpdateDto input);
 
-        Task<WithdrawAccountDto> UpdateAsync(Guid id, CreateUpdateWithdrawAccountDto input);
+        Task<WithdrawAccountDto> UpdateAsync(Guid id, WithdrawAccountCreateUpdateDto input);
 
         Task DeleteAsync(Guid id);
     }

@@ -14,7 +14,7 @@ namespace Lazy.Abp.WalletKit.PaymentSettings
 
         Task<PaymentSettingDto> GetAsync(Guid id);
 
-        Task<PagedResultDto<PaymentSettingDto>> GetListAsync(GetPaymentSettingListRequestDto input);
+        Task<PagedResultDto<PaymentSettingDto>> GetListAsync(PaymentSettingListRequestDto input);
     
         Task<PaymentSettingDto> UpdateAlipaySettingAsync(PaymentSettingAlipayDto input);
 

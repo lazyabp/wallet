@@ -5,7 +5,7 @@ using Volo.Abp.Application.Dtos;
 
 namespace Lazy.Abp.WalletKit.WithdrawAccounts.Dtos
 {
-    public class GetWithdrawAccountListRequestDto : PagedAndSortedResultRequestDto
+    public class WithdrawAccountListRequestDto : PagedAndSortedResultRequestDto
     {
         public Guid? UserId { get; set; }
         public AccountType? AccountType { get; set; }

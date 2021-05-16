@@ -5,7 +5,7 @@ using Volo.Abp.Application.Dtos;
 
 namespace Lazy.Abp.WalletKit.Wallets.Dtos
 {
-    public class GetWalletListRequestDto : PagedAndSortedResultRequestDto
+    public class WalletListRequestDto : PagedAndSortedResultRequestDto
     {
         public Guid? UserId { get; set; }
         public decimal? MinBalance { get; set; }

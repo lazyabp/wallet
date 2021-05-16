@@ -28,7 +28,7 @@ namespace Lazy.Abp.WalletKit.WalletLogs
         }
 
         [Authorize(WalletKitPermissions.WalletLog.Default)]
-        public async Task<PagedResultDto<WalletLogDto>> GetListAsync(GetWalletLogListRequestDto input)
+        public async Task<PagedResultDto<WalletLogDto>> GetListAsync(WalletLogListRequestDto input)
         {
             var count = await _repository.GetCountAsync(CurrentUser.GetId(), input.IsOut, input.TypeName, 
                 input.MinAmount, input.MaxAmount, input.CreationAfter, input.CreationBefore, input.Filter);
@@ -43,7 +43,7 @@ namespace Lazy.Abp.WalletKit.WalletLogs
         }
 
         [Authorize(WalletKitPermissions.WalletLog.Management)]
-        public async Task<PagedResultDto<WalletLogDto>> GetManagementListAsync(GetWalletLogListRequestDto input)
+        public async Task<PagedResultDto<WalletLogDto>> GetManagementListAsync(WalletLogListRequestDto input)
         {
             var count = await _repository.GetCountAsync(null, input.IsOut, input.TypeName,
                 input.MinAmount, input.MaxAmount, input.CreationAfter, input.CreationBefore, input.Filter);

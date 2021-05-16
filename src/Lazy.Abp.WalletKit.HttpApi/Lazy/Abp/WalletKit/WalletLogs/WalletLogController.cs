@@ -31,14 +31,14 @@ namespace Lazy.Abp.WalletKit.WalletLogs
         }
 
         [HttpGet]
-        public Task<PagedResultDto<WalletLogDto>> GetListAsync(GetWalletLogListRequestDto input)
+        public Task<PagedResultDto<WalletLogDto>> GetListAsync(WalletLogListRequestDto input)
         {
             return _service.GetListAsync(input);
         }
 
         [HttpGet]
         [Route("management")]
-        public Task<PagedResultDto<WalletLogDto>> GetManagementListAsync(GetWalletLogListRequestDto input)
+        public Task<PagedResultDto<WalletLogDto>> GetManagementListAsync(WalletLogListRequestDto input)
         {
             return _service.GetManagementListAsync(input);
         }

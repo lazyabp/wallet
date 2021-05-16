@@ -31,7 +31,7 @@ namespace Lazy.Abp.WalletKit.Wallets
         }
 
         [HttpGet]
-        public Task<PagedResultDto<WalletDto>> GetListAsync(GetWalletListRequestDto input)
+        public Task<PagedResultDto<WalletDto>> GetListAsync(WalletListRequestDto input)
         {
             return _service.GetListAsync(input);
         }

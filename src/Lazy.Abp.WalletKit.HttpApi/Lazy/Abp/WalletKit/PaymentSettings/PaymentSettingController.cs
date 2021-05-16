@@ -31,7 +31,7 @@ namespace Lazy.Abp.WalletKit.PaymentSettings
         }
 
         [HttpGet]
-        public Task<PagedResultDto<PaymentSettingDto>> GetListAsync(GetPaymentSettingListRequestDto input)
+        public Task<PagedResultDto<PaymentSettingDto>> GetListAsync(PaymentSettingListRequestDto input)
         {
             return _service.GetListAsync(input);
         }

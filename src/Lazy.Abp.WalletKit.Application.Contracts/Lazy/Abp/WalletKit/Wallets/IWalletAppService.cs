@@ -10,7 +10,7 @@ namespace Lazy.Abp.WalletKit.Wallets
     {
         Task<WalletDto> GetAsync();
 
-        Task<PagedResultDto<WalletDto>> GetListAsync(GetWalletListRequestDto input);
+        Task<PagedResultDto<WalletDto>> GetListAsync(WalletListRequestDto input);
 
         Task<WalletDto> ResetAsync(Guid userId);
     }

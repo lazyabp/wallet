@@ -33,7 +33,7 @@ namespace Lazy.Abp.WalletKit.Wallets
         }
 
         [Authorize(WalletKitPermissions.Wallet.Management)]
-        public async Task<PagedResultDto<WalletDto>> GetListAsync(GetWalletListRequestDto input)
+        public async Task<PagedResultDto<WalletDto>> GetListAsync(WalletListRequestDto input)
         {
             var count = await _repository.GetCountAsync(null, input.MinBalance, input.MaxBalance, input.HasLockedAmount, input.Filter);
 

@@ -66,7 +66,7 @@ namespace Lazy.Abp.WalletKit.PaymentSettings
         }
 
         [Authorize(WalletKitPermissions.PaymentSetting.Default)]
-        public async Task<PagedResultDto<PaymentSettingDto>> GetListAsync(GetPaymentSettingListRequestDto input)
+        public async Task<PagedResultDto<PaymentSettingDto>> GetListAsync(PaymentSettingListRequestDto input)
         {
             var count = await _repository.GetCountAsync(input.Gateway, input.IsActive, input.Filter);
             var list = await _repository.GetListAsync(input.Sorting, input.MaxResultCount, input.SkipCount, input.Gateway, input.IsActive, input.Filter);

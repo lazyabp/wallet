@@ -3,7 +3,7 @@ using System;
 namespace Lazy.Abp.WalletKit.RechargeProducts.Dtos
 {
     [Serializable]
-    public class CreateUpdateRechargeProductDto
+    public class RechargeProductCreateUpdateDto
     {
         public string Name { get; set; }
 

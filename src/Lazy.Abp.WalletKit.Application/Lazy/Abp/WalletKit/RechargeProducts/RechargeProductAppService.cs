@@ -27,7 +27,7 @@ namespace Lazy.Abp.WalletKit.RechargeProducts
         }
 
         [Authorize(WalletKitPermissions.RechargeProduct.Default)]
-        public async Task<PagedResultDto<RechargeProductDto>> GetListAsync(GetRechargeProductListRequestDto input)
+        public async Task<PagedResultDto<RechargeProductDto>> GetListAsync(RechargeProductListRequestDto input)
         {
             var count = await _repository.GetCountAsync(input.IsActive, input.MinPrice, input.MaxPrice, input.CreationAfter, input.CreationBefore, input.Filter);
             var list = await _repository.GetListAsync(input.Sorting, input.MaxResultCount, input.SkipCount,
@@ -40,7 +40,7 @@ namespace Lazy.Abp.WalletKit.RechargeProducts
         }
 
         [Authorize(WalletKitPermissions.RechargeProduct.Create)]
-        public async Task<RechargeProductDto> CreateAsync(CreateUpdateRechargeProductDto input)
+        public async Task<RechargeProductDto> CreateAsync(RechargeProductCreateUpdateDto input)
         {
             var product = new RechargeProduct(GuidGenerator.Create(), CurrentUser.TenantId, input.Name, input.Thumbnail,
                 input.RetailPrice, input.SalePrice, input.Quantity, input.Description, input.IsActive, input.DisplayOrder);
@@ -51,7 +51,7 @@ namespace Lazy.Abp.WalletKit.RechargeProducts
         }
 
         [Authorize(WalletKitPermissions.RechargeProduct.Update)]
-        public async Task<RechargeProductDto> UpdateAsync(Guid id, CreateUpdateRechargeProductDto input)
+        public async Task<RechargeProductDto> UpdateAsync(Guid id, RechargeProductCreateUpdateDto input)
         {
             var product = await _repository.GetAsync(id);
             product.Update(input.Name, input.Thumbnail, input.RetailPrice, 

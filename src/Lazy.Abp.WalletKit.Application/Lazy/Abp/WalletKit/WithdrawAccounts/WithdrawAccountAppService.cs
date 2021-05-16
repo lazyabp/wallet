@@ -28,7 +28,7 @@ namespace Lazy.Abp.WalletKit.WithdrawAccounts
         }
 
         [Authorize(WalletKitPermissions.WithdrawAccount.Default)]
-        public async Task<PagedResultDto<WithdrawAccountDto>> GetListAsync(GetWithdrawAccountListRequestDto input)
+        public async Task<PagedResultDto<WithdrawAccountDto>> GetListAsync(WithdrawAccountListRequestDto input)
         {
             var count = await _repository.GetCountAsync(CurrentUser.GetId(), input.AccountType, input.IsDefault, input.Filter);
             var list = await _repository.GetListAsync(input.Sorting, input.MaxResultCount, input.SkipCount,
@@ -41,7 +41,7 @@ namespace Lazy.Abp.WalletKit.WithdrawAccounts
         }
 
         [Authorize(WalletKitPermissions.WithdrawAccount.Management)]
-        public async Task<PagedResultDto<WithdrawAccountDto>> GetManagementListAsync(GetWithdrawAccountListRequestDto input)
+        public async Task<PagedResultDto<WithdrawAccountDto>> GetManagementListAsync(WithdrawAccountListRequestDto input)
         {
             var count = await _repository.GetCountAsync(null, input.AccountType, input.IsDefault, input.Filter);
             var list = await _repository.GetListAsync(input.Sorting, input.MaxResultCount, input.SkipCount,
@@ -54,7 +54,7 @@ namespace Lazy.Abp.WalletKit.WithdrawAccounts
         }
 
         [Authorize(WalletKitPermissions.WithdrawAccount.Create)]
-        public async Task<WithdrawAccountDto> CreateAsync(CreateUpdateWithdrawAccountDto input)
+        public async Task<WithdrawAccountDto> CreateAsync(WithdrawAccountCreateUpdateDto input)
         {
             var account = new WithdrawAccount(GuidGenerator.Create(), CurrentUser.TenantId, input.AccountType, input.Account, input.IsDefault, input.Description);
 
@@ -64,7 +64,7 @@ namespace Lazy.Abp.WalletKit.WithdrawAccounts
         }
 
         [Authorize(WalletKitPermissions.WithdrawAccount.Update)]
-        public async Task<WithdrawAccountDto> UpdateAsync(Guid id, CreateUpdateWithdrawAccountDto input)
+        public async Task<WithdrawAccountDto> UpdateAsync(Guid id, WithdrawAccountCreateUpdateDto input)
         {
             var account = await _repository.GetAsync(id);
             account.Update(input.AccountType, input.Account, input.IsDefault, input.Description);
