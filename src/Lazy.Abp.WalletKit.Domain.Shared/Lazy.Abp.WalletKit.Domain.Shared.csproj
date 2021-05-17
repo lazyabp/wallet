@@ -17,8 +17,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Localization\WalletKit\*.json" />
-    <Content Remove="Localization\WalletKit\*.json" />
+    <EmbeddedResource Include="Lazy\Abp\WalletKit\Localization\WalletKit\*.json" />
+    <Content Remove="Lazy\Abp\WalletKit\Localization\WalletKit\*.json" />
   </ItemGroup>
 
 </Project>
