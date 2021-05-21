@@ -25,7 +25,7 @@ namespace Lazy.Abp.WalletKit
                 options.Resources
                     .Add<WalletKitResource>("en")
                     .AddBaseTypes(typeof(AbpValidationResource))
-                    .AddVirtualJson("/Localization/WalletKit");
+                    .AddVirtualJson("/Lazy/Abp/WalletKit/Localization/WalletKit");
             });
 
             Configure<AbpExceptionLocalizationOptions>(options =>
