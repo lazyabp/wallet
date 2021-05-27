@@ -1,12 +1,11 @@
+using Lazy.Abp.WalletKit.RechargeProducts;
+using Lazy.Abp.WalletKit.WalletActions;
+using Lazy.Abp.WalletKit.WalletLogs;
+using Lazy.Abp.WalletKit.Wallets;
+using Lazy.Abp.WalletKit.WithdrawAccounts;
 using Microsoft.EntityFrameworkCore;
 using Volo.Abp.Data;
 using Volo.Abp.EntityFrameworkCore;
-using Lazy.Abp.WalletKit.PaymentSettings;
-using Lazy.Abp.WalletKit.RechargeOrders;
-using Lazy.Abp.WalletKit.RechargeProducts;
-using Lazy.Abp.WalletKit.Wallets;
-using Lazy.Abp.WalletKit.WalletLogs;
-using Lazy.Abp.WalletKit.WithdrawAccounts;
 
 namespace Lazy.Abp.WalletKit.EntityFrameworkCore
 {
@@ -16,13 +15,11 @@ namespace Lazy.Abp.WalletKit.EntityFrameworkCore
         /* Add DbSet for each Aggregate Root here. Example:
          * public DbSet<Question> Questions { get; set; }
          */
-        public DbSet<PaymentSetting> PaymentSettings { get; set; }
-        public DbSet<RechargeOrder> RechargeOrders { get; set; }
-        public DbSet<RechargeOrderItem> RechargeOrderItems { get; set; }
         public DbSet<RechargeProduct> RechargeProducts { get; set; }
         public DbSet<Wallet> Wallets { get; set; }
         public DbSet<WalletLog> WalletLogs { get; set; }
         public DbSet<WithdrawAccount> WithdrawAccounts { get; set; }
+        public DbSet<WalletAction> WalletActions { get; set; }
 
         public WalletKitDbContext(DbContextOptions<WalletKitDbContext> options) 
             : base(options)

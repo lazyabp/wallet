@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <Import Project="..\..\common.props" />
 
@@ -6,6 +6,12 @@
     <TargetFramework>net5.0</TargetFramework>
     <RootNamespace />
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="WalletActions\**" />
+    <EmbeddedResource Remove="WalletActions\**" />
+    <None Remove="WalletActions\**" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Volo.Abp.AspNetCore.Mvc" Version="$(AbpVersion)" />

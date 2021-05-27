@@ -1,0 +1,43 @@
+using System;
+using Lazy.Abp.WalletKit.WalletActions.Dtos;
+using Volo.Abp.Application.Dtos;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using Volo.Abp;
+
+namespace Lazy.Abp.WalletKit.WalletActions
+{
+    [RemoteService(Name = WalletKitRemoteServiceConsts.RemoteServiceName)]
+    [Area("walletkit")]
+    [ControllerName("WalletAction")]
+    [Route("/api/walletKit/wallet-actions")]
+    public class WalletActionController : WalletKitController, IWalletActionAppService
+    {
+        private readonly IWalletActionAppService _service;
+
+        public WalletActionController(IWalletActionAppService service)
+        {
+            _service = service;
+        }
+
+        [HttpGet]
+        [Route("{id}")]
+        public virtual Task<WalletActionDto> GetAsync(Guid id)
+        {
+            return _service.GetAsync(id);
+        }
+
+        [HttpGet]
+        public virtual Task<PagedResultDto<WalletActionDto>> GetListAsync(WalletActionListRequestDto input)
+        {
+            return _service.GetListAsync(input);
+        }
+
+        [HttpDelete]
+        [Route("{id}")]
+        public virtual Task DeleteAsync(Guid id)
+        {
+            return _service.DeleteAsync(id);
+        }
+    }
+}

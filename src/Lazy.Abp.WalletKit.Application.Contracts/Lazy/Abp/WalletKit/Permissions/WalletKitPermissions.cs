@@ -19,23 +19,6 @@ namespace Lazy.Abp.WalletKit.Permissions
             public const string Delete = Default + ".Delete";
         }
 
-        public class RechargeOrder
-        {
-            public const string Default = GroupName + ".RechargeOrder";
-            public const string Update = Default + ".Update";
-            public const string Create = Default + ".Create";
-            public const string Delete = Default + ".Delete";
-            public const string Management = Default + ".Management";
-        }
-
-        public class RechargeOrderItem
-        {
-            public const string Default = GroupName + ".RechargeOrderItem";
-            public const string Update = Default + ".Update";
-            public const string Create = Default + ".Create";
-            public const string Delete = Default + ".Delete";
-        }
-
         public class RechargeProduct
         {
             public const string Default = GroupName + ".RechargeProduct";
@@ -64,6 +47,12 @@ namespace Lazy.Abp.WalletKit.Permissions
             public const string Create = Default + ".Create";
             public const string Delete = Default + ".Delete";
             public const string Management = Default + ".Management";
+        }
+
+        public class WalletAction
+        {
+            public const string Default = GroupName + ".WalletAction";
+            public const string Delete = Default + ".Delete";
         }
     }
 }

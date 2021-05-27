@@ -1,13 +1,12 @@
-using System;
+using Lazy.Abp.WalletKit.RechargeProducts;
+using Lazy.Abp.WalletKit.WalletActions;
+using Lazy.Abp.WalletKit.WalletLogs;
+using Lazy.Abp.WalletKit.Wallets;
+using Lazy.Abp.WalletKit.WithdrawAccounts;
 using Microsoft.EntityFrameworkCore;
+using System;
 using Volo.Abp;
 using Volo.Abp.EntityFrameworkCore.Modeling;
-using Lazy.Abp.WalletKit.PaymentSettings;
-using Lazy.Abp.WalletKit.RechargeOrders;
-using Lazy.Abp.WalletKit.RechargeProducts;
-using Lazy.Abp.WalletKit.Wallets;
-using Lazy.Abp.WalletKit.WalletLogs;
-using Lazy.Abp.WalletKit.WithdrawAccounts;
 
 namespace Lazy.Abp.WalletKit.EntityFrameworkCore
 {
@@ -46,45 +45,6 @@ namespace Lazy.Abp.WalletKit.EntityFrameworkCore
             });
             */
 
-
-            builder.Entity<PaymentSetting>(b =>
-            {
-                b.ToTable(options.TablePrefix + "PaymentSettings", options.Schema);
-                b.ConfigureByConvention(); 
-                
-
-                /* Configure more properties here */
-            });
-
-
-            builder.Entity<RechargeOrder>(b =>
-            {
-                b.ToTable(options.TablePrefix + "RechargeOrders", options.Schema);
-                b.ConfigureByConvention();
-
-                b.HasIndex(q => q.OrderNo);
-                b.HasIndex(q => q.TradeNo);
-
-                b.HasMany(q => q.Items).WithOne().HasForeignKey(x => x.RechargeOrderId).IsRequired();
-                /* Configure more properties here */
-            });
-
-
-            builder.Entity<RechargeOrderItem>(b =>
-            {
-                b.ToTable(options.TablePrefix + "RechargeOrderItems", options.Schema);
-                b.ConfigureByConvention(); 
-                
-                b.HasKey(e => new
-                {
-                    e.RechargeOrderId,
-                    e.RechargeProductId,
-                });
-
-                /* Configure more properties here */
-            });
-
-
             builder.Entity<RechargeProduct>(b =>
             {
                 b.ToTable(options.TablePrefix + "RechargeProducts", options.Schema);
@@ -117,6 +77,16 @@ namespace Lazy.Abp.WalletKit.EntityFrameworkCore
             builder.Entity<WithdrawAccount>(b =>
             {
                 b.ToTable(options.TablePrefix + "WithdrawAccounts", options.Schema);
+                b.ConfigureByConvention(); 
+                
+
+                /* Configure more properties here */
+            });
+
+
+            builder.Entity<WalletAction>(b =>
+            {
+                b.ToTable(options.TablePrefix + "WalletActions", options.Schema);
                 b.ConfigureByConvention(); 
                 
 

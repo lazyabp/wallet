@@ -15,12 +15,6 @@ namespace Lazy.Abp.WalletKit.Permissions
             paymentSettingPermission.AddChild(WalletKitPermissions.PaymentSetting.Update, L("Permission:Update"));
             paymentSettingPermission.AddChild(WalletKitPermissions.PaymentSetting.Delete, L("Permission:Delete"));
 
-            var rechargeOrderPermission = myGroup.AddPermission(WalletKitPermissions.RechargeOrder.Default, L("Permission:RechargeOrder"));
-            rechargeOrderPermission.AddChild(WalletKitPermissions.RechargeOrder.Create, L("Permission:Create"));
-            rechargeOrderPermission.AddChild(WalletKitPermissions.RechargeOrder.Update, L("Permission:Update"));
-            rechargeOrderPermission.AddChild(WalletKitPermissions.RechargeOrder.Delete, L("Permission:Delete"));
-            rechargeOrderPermission.AddChild(WalletKitPermissions.RechargeOrder.Management, L("Permission:Management"));
-
             var rechargeProductPermission = myGroup.AddPermission(WalletKitPermissions.RechargeProduct.Default, L("Permission:RechargeProduct"));
             rechargeProductPermission.AddChild(WalletKitPermissions.RechargeProduct.Create, L("Permission:Create"));
             rechargeProductPermission.AddChild(WalletKitPermissions.RechargeProduct.Update, L("Permission:Update"));
@@ -37,6 +31,9 @@ namespace Lazy.Abp.WalletKit.Permissions
             withdrawAccountPermission.AddChild(WalletKitPermissions.WithdrawAccount.Update, L("Permission:Update"));
             withdrawAccountPermission.AddChild(WalletKitPermissions.WithdrawAccount.Delete, L("Permission:Delete"));
             withdrawAccountPermission.AddChild(WalletKitPermissions.WithdrawAccount.Management, L("Permission:Management"));
+
+            var walletActionPermission = myGroup.AddPermission(WalletKitPermissions.WalletAction.Default, L("Permission:WalletAction"));
+            walletActionPermission.AddChild(WalletKitPermissions.WalletAction.Delete, L("Permission:Delete"));
         }
 
         private static LocalizableString L(string name)
