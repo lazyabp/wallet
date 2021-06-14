@@ -59,9 +59,11 @@ namespace Lazy.Abp.WalletKit.Wallets
 
             if (wallet.Balance > 0)
             {
+                var balance = wallet.Balance;
+
                 wallet.Reset();
 
-                await _walletLogManager.WriteOutLogAsync(wallet.TenantId, wallet.UserId, "ResetWallet", wallet.Balance, 0, L["ResetWallet"], input.Reason);
+                await _walletLogManager.WriteOutLogAsync(wallet.TenantId, wallet.UserId, "ResetWallet", balance, 0, L["ResetWallet"], input.Reason);
             }
 
             return ObjectMapper.Map<Wallet, WalletDto>(wallet);
