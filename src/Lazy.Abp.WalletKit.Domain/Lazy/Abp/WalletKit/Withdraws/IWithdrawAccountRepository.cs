@@ -4,7 +4,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Volo.Abp.Domain.Repositories;
 
-namespace Lazy.Abp.WalletKit.WithdrawAccounts
+namespace Lazy.Abp.WalletKit.Withdraws
 {
     public interface IWithdrawAccountRepository : IRepository<WithdrawAccount, Guid>
     {

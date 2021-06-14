@@ -3,8 +3,8 @@ using Lazy.Abp.WalletKit.Recharges;
 using Lazy.Abp.WalletKit.Recharges.Dtos;
 using Lazy.Abp.WalletKit.Wallets;
 using Lazy.Abp.WalletKit.Wallets.Dtos;
-using Lazy.Abp.WalletKit.WithdrawAccounts;
-using Lazy.Abp.WalletKit.WithdrawAccounts.Dtos;
+using Lazy.Abp.WalletKit.Withdraws;
+using Lazy.Abp.WalletKit.Withdraws.Dtos;
 
 namespace Lazy.Abp.WalletKit
 {

@@ -1,9 +1,10 @@
 using System;
+using Volo.Abp.Application.Dtos;
 
-namespace Lazy.Abp.WalletKit.WithdrawAccounts.Dtos
+namespace Lazy.Abp.WalletKit.Withdraws.Dtos
 {
     [Serializable]
-    public class WithdrawAccountCreateUpdateDto
+    public class WithdrawAccountDto : FullAuditedEntityDto<Guid>
     {
         public AccountType AccountType { get; set; }
 

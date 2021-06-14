@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Volo.Abp.Application.Dtos;
 
-namespace Lazy.Abp.WalletKit.WithdrawAccounts.Dtos
+namespace Lazy.Abp.WalletKit.Withdraws.Dtos
 {
     public class WithdrawAccountListRequestDto : PagedAndSortedResultRequestDto
     {

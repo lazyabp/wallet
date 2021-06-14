@@ -1,4 +1,4 @@
-﻿using Lazy.Abp.WalletKit.WithdrawAccounts.Dtos;
+﻿using Lazy.Abp.WalletKit.Withdraws.Dtos;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using Volo.Abp;
 using Volo.Abp.Application.Dtos;
 
-namespace Lazy.Abp.WalletKit.WithdrawAccounts
+namespace Lazy.Abp.WalletKit.Withdraws
 {
     [RemoteService(Name = WalletKitRemoteServiceConsts.RemoteServiceName)]
     [Area("walletkit")]

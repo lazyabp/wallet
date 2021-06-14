@@ -1,6 +1,6 @@
 using Lazy.Abp.WalletKit.Recharges;
 using Lazy.Abp.WalletKit.Wallets;
-using Lazy.Abp.WalletKit.WithdrawAccounts;
+using Lazy.Abp.WalletKit.Withdraws;
 using Microsoft.EntityFrameworkCore;
 using Volo.Abp.Data;
 using Volo.Abp.EntityFrameworkCore;

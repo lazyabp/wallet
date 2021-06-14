@@ -1,6 +1,6 @@
 using System;
 using Lazy.Abp.WalletKit.Permissions;
-using Lazy.Abp.WalletKit.WithdrawAccounts.Dtos;
+using Lazy.Abp.WalletKit.Withdraws.Dtos;
 using Volo.Abp.Application.Dtos;
 using Volo.Abp.Application.Services;
 using System.Threading.Tasks;
@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Authorization;
 using Volo.Abp.Users;
 using System.Collections.Generic;
 
-namespace Lazy.Abp.WalletKit.WithdrawAccounts
+namespace Lazy.Abp.WalletKit.Withdraws
 {
     public class WithdrawAccountAppService : WalletKitAppService, IWithdrawAccountAppService
     {

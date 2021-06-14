@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using Volo.Abp.Domain.Repositories.EntityFrameworkCore;
 using Volo.Abp.EntityFrameworkCore;
 
-namespace Lazy.Abp.WalletKit.WithdrawAccounts
+namespace Lazy.Abp.WalletKit.Withdraws
 {
     public class WithdrawAccountRepository : EfCoreRepository<IWalletKitDbContext, WithdrawAccount, Guid>, IWithdrawAccountRepository
     {

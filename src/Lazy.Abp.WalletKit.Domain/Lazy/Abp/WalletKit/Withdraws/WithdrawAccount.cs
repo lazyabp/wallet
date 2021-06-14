@@ -4,7 +4,7 @@ using System.Text;
 using Volo.Abp.Domain.Entities.Auditing;
 using Volo.Abp.MultiTenancy;
 
-namespace Lazy.Abp.WalletKit.WithdrawAccounts
+namespace Lazy.Abp.WalletKit.Withdraws
 {
     public class WithdrawAccount : FullAuditedAggregateRoot<Guid>, IMultiTenant
     {

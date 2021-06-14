@@ -1,10 +1,10 @@
 using System;
 using System.Threading.Tasks;
-using Lazy.Abp.WalletKit.WithdrawAccounts.Dtos;
+using Lazy.Abp.WalletKit.Withdraws.Dtos;
 using Volo.Abp.Application.Dtos;
 using Volo.Abp.Application.Services;
 
-namespace Lazy.Abp.WalletKit.WithdrawAccounts
+namespace Lazy.Abp.WalletKit.Withdraws
 {
     public interface IWithdrawAccountAppService : IApplicationService
     {
