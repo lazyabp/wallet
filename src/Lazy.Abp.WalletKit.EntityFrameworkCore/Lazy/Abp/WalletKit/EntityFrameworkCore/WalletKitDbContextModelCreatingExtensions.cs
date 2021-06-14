@@ -1,6 +1,4 @@
-using Lazy.Abp.WalletKit.RechargeProducts;
-using Lazy.Abp.WalletKit.WalletActions;
-using Lazy.Abp.WalletKit.WalletLogs;
+using Lazy.Abp.WalletKit.Recharges;
 using Lazy.Abp.WalletKit.Wallets;
 using Lazy.Abp.WalletKit.WithdrawAccounts;
 using Microsoft.EntityFrameworkCore;
@@ -84,9 +82,9 @@ namespace Lazy.Abp.WalletKit.EntityFrameworkCore
             });
 
 
-            builder.Entity<WalletAction>(b =>
+            builder.Entity<RechargeHistory>(b =>
             {
-                b.ToTable(options.TablePrefix + "WalletActions", options.Schema);
+                b.ToTable(options.TablePrefix + "RechargeHistories", options.Schema);
                 b.ConfigureByConvention(); 
                 
 

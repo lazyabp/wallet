@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Volo.Abp.Users;
 using System.Collections.Generic;
-using Lazy.Abp.WalletKit.WalletLogs;
+using Volo.Abp;
 
 namespace Lazy.Abp.WalletKit.Wallets
 {
@@ -52,21 +52,37 @@ namespace Lazy.Abp.WalletKit.Wallets
             );
         }
 
-        [Authorize(WalletKitPermissions.Wallet.Reset)]
-        public async Task<WalletDto> ResetAsync(Guid userId, ResetReasonDto input)
+        [Authorize(WalletKitPermissions.Wallet.AdjustmentBalance)]
+        public async Task<WalletDto> IncreaseBalanceAsync(Guid userId, BalanceAdjustmentDto input)
         {
+            input.Amount = Math.Abs(input.Amount);
+
             var wallet = await _repository.GetByUserIdAsync(userId);
+            wallet.IncBalance(input.Amount);
 
-            if (wallet.Balance > 0)
-            {
-                var balance = wallet.Balance;
-
-                wallet.Reset();
-
-                await _walletLogManager.WriteOutLogAsync(wallet.TenantId, wallet.UserId, "ResetWallet", balance, 0, L["ResetWallet"], input.Reason);
-            }
+            await _walletLogManager.WriteOutLogAsync(wallet.TenantId, wallet.UserId, "IncreaseBalance", input.Amount, wallet.Balance, L["IncreaseBalance"], input.Reason);
 
             return ObjectMapper.Map<Wallet, WalletDto>(wallet);
+        }
+
+        [Authorize(WalletKitPermissions.Wallet.AdjustmentBalance)]
+        public async Task<WalletDto> DecreaseBalanceAsync(Guid userId, BalanceAdjustmentDto input)
+        {
+            input.Amount = Math.Abs(input.Amount);
+
+            try
+            {
+                var wallet = await _repository.GetByUserIdAsync(userId);
+                wallet.DecBalance(input.Amount);
+
+                await _walletLogManager.WriteOutLogAsync(wallet.TenantId, wallet.UserId, "DecreaseBalance", input.Amount, wallet.Balance, L["DecreaseBalance"], input.Reason);
+
+                return ObjectMapper.Map<Wallet, WalletDto>(wallet);
+            }
+            catch(Exception ex)
+            {
+                throw new UserFriendlyException(L[ex.Message]);
+            }
         }
     }
 }

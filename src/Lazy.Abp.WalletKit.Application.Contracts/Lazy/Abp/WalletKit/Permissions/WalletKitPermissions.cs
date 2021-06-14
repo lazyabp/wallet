@@ -11,14 +11,6 @@ namespace Lazy.Abp.WalletKit.Permissions
             return ReflectionHelper.GetPublicConstantsRecursively(typeof(WalletKitPermissions));
         }
 
-        public class PaymentSetting
-        {
-            public const string Default = GroupName + ".PaymentSetting";
-            public const string Update = Default + ".Update";
-            public const string Create = Default + ".Create";
-            public const string Delete = Default + ".Delete";
-        }
-
         public class RechargeProduct
         {
             public const string Default = GroupName + ".RechargeProduct";
@@ -27,11 +19,17 @@ namespace Lazy.Abp.WalletKit.Permissions
             public const string Delete = Default + ".Delete";
         }
 
+        public class RechargeHistory
+        {
+            public const string Default = GroupName + ".RechargeHistory";
+            public const string Delete = Default + ".Delete";
+        }
+
         public class Wallet
         {
             public const string Default = GroupName + ".Wallet";
             public const string Management = Default + ".Management";
-            public const string Reset = Default + ".Reset";
+            public const string AdjustmentBalance = Default + ".AdjustmentBalance";
         }
 
         public class WalletLog
@@ -47,12 +45,6 @@ namespace Lazy.Abp.WalletKit.Permissions
             public const string Create = Default + ".Create";
             public const string Delete = Default + ".Delete";
             public const string Management = Default + ".Management";
-        }
-
-        public class WalletAction
-        {
-            public const string Default = GroupName + ".WalletAction";
-            public const string Delete = Default + ".Delete";
         }
     }
 }

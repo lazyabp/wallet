@@ -1,10 +1,6 @@
 using AutoMapper;
-using Lazy.Abp.WalletKit.RechargeProducts;
-using Lazy.Abp.WalletKit.RechargeProducts.Dtos;
-using Lazy.Abp.WalletKit.WalletActions;
-using Lazy.Abp.WalletKit.WalletActions.Dtos;
-using Lazy.Abp.WalletKit.WalletLogs;
-using Lazy.Abp.WalletKit.WalletLogs.Dtos;
+using Lazy.Abp.WalletKit.Recharges;
+using Lazy.Abp.WalletKit.Recharges.Dtos;
 using Lazy.Abp.WalletKit.Wallets;
 using Lazy.Abp.WalletKit.Wallets.Dtos;
 using Lazy.Abp.WalletKit.WithdrawAccounts;
@@ -23,7 +19,7 @@ namespace Lazy.Abp.WalletKit
             CreateMap<Wallet, WalletDto>();
             CreateMap<WalletLog, WalletLogDto>();
             CreateMap<WithdrawAccount, WithdrawAccountDto>();
-            CreateMap<WalletAction, WalletActionDto>();
+            CreateMap<RechargeHistory, RechargeHistoryDto>();
         }
     }
 }

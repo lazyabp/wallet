@@ -41,6 +41,9 @@ namespace Lazy.Abp.WalletKit.Wallets
 
         public void DecBalance(decimal amount)
         {
+            if (Balance - Math.Abs(amount) < 0)
+                throw new Exception("InsufficientBalance");
+
             Balance -= Math.Abs(amount);
         }
 

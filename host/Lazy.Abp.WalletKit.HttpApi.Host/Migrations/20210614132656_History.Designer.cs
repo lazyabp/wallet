@@ -4,15 +4,17 @@ using Lazy.Abp.WalletKit.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Volo.Abp.EntityFrameworkCore;
 
 namespace Lazy.Abp.WalletKit.Migrations
 {
     [DbContext(typeof(WalletKitHttpApiHostMigrationsDbContext))]
-    partial class WalletKitHttpApiHostMigrationsDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210614132656_History")]
+    partial class History
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

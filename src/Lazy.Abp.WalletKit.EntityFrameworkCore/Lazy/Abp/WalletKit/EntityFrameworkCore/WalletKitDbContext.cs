@@ -1,6 +1,4 @@
-using Lazy.Abp.WalletKit.RechargeProducts;
-using Lazy.Abp.WalletKit.WalletActions;
-using Lazy.Abp.WalletKit.WalletLogs;
+using Lazy.Abp.WalletKit.Recharges;
 using Lazy.Abp.WalletKit.Wallets;
 using Lazy.Abp.WalletKit.WithdrawAccounts;
 using Microsoft.EntityFrameworkCore;
@@ -19,7 +17,7 @@ namespace Lazy.Abp.WalletKit.EntityFrameworkCore
         public DbSet<Wallet> Wallets { get; set; }
         public DbSet<WalletLog> WalletLogs { get; set; }
         public DbSet<WithdrawAccount> WithdrawAccounts { get; set; }
-        public DbSet<WalletAction> WalletActions { get; set; }
+        public DbSet<RechargeHistory> RechargeHistories { get; set; }
 
         public WalletKitDbContext(DbContextOptions<WalletKitDbContext> options) 
             : base(options)

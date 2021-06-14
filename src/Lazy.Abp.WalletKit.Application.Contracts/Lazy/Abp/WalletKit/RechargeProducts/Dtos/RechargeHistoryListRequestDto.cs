@@ -5,13 +5,18 @@ using Volo.Abp.Application.Dtos;
 
 namespace Lazy.Abp.WalletKit.Recharges.Dtos
 {
-    public class RechargeProductListRequestDto : PagedAndSortedResultRequestDto
+    public class RechargeHistoryListRequestDto : PagedAndSortedResultRequestDto
     {
-        public bool? IsActive { get; set; }
-        public decimal? MinPrice { get; set; }
-        public decimal? MaxPrice { get; set; }
+        public Guid? RechargeProductId { get; set; }
+
+        public decimal? MinPaidAmount { get; set; }
+
+        public decimal? MaxPaidAmount { get; set; }
+
         public DateTime? CreationAfter { get; set; }
+
         public DateTime? CreationBefore { get; set; }
+
         public string Filter { get; set; }
     }
 }

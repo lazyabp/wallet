@@ -1,10 +1,10 @@
 using System;
 using System.Threading.Tasks;
-using Lazy.Abp.WalletKit.RechargeProducts.Dtos;
+using Lazy.Abp.WalletKit.Recharges.Dtos;
 using Volo.Abp.Application.Dtos;
 using Volo.Abp.Application.Services;
 
-namespace Lazy.Abp.WalletKit.RechargeProducts
+namespace Lazy.Abp.WalletKit.Recharges
 {
     public interface IRechargeProductAppService : IApplicationService
     {

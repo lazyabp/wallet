@@ -1,6 +1,6 @@
 using System;
 
-namespace Lazy.Abp.WalletKit.RechargeProducts.Dtos
+namespace Lazy.Abp.WalletKit.Recharges.Dtos
 {
     [Serializable]
     public class RechargeProductCreateUpdateDto

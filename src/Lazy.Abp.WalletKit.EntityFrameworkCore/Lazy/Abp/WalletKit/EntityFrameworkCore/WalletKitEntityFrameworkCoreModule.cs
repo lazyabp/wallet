@@ -1,6 +1,4 @@
-using Lazy.Abp.WalletKit.RechargeProducts;
-using Lazy.Abp.WalletKit.WalletActions;
-using Lazy.Abp.WalletKit.WalletLogs;
+using Lazy.Abp.WalletKit.Recharges;
 using Lazy.Abp.WalletKit.Wallets;
 using Lazy.Abp.WalletKit.WithdrawAccounts;
 using Microsoft.Extensions.DependencyInjection;
@@ -26,7 +24,7 @@ namespace Lazy.Abp.WalletKit.EntityFrameworkCore
                 options.AddRepository<Wallet, WalletRepository>();
                 options.AddRepository<WalletLog, WalletLogRepository>();
                 options.AddRepository<WithdrawAccount, WithdrawAccountRepository>();
-                options.AddRepository<WalletAction, WalletActionRepository>();
+                options.AddRepository<RechargeHistory, RechargeHistoryRepository>();
             });
         }
     }
