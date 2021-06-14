@@ -38,9 +38,9 @@ namespace Lazy.Abp.WalletKit.Wallets
 
         [HttpPut]
         [Route("{userId}/reset")]
-        public Task<WalletDto> ResetAsync(Guid userId)
+        public Task<WalletDto> ResetAsync(Guid userId, ResetReasonDto input)
         {
-            return _service.ResetAsync(userId);
+            return _service.ResetAsync(userId, input);
         }
     }
 }

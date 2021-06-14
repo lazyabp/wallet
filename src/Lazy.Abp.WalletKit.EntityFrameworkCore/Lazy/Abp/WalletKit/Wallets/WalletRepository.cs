@@ -30,7 +30,7 @@ namespace Lazy.Abp.WalletKit.Wallets
             Guid? userId = null,
             decimal? minBalance = null,
             decimal? maxBalance = null,
-            bool hasLockedAmount = false,
+            bool? hasLockedAmount = false,
             string filter = null,
             CancellationToken cancellationToken = default
         )
@@ -48,7 +48,7 @@ namespace Lazy.Abp.WalletKit.Wallets
             Guid? userId = null,
             decimal? minBalance = null,
             decimal? maxBalance = null,
-            bool hasLockedAmount = false,
+            bool? hasLockedAmount = false,
             string filter = null,
             CancellationToken cancellationToken = default
         )
@@ -65,7 +65,7 @@ namespace Lazy.Abp.WalletKit.Wallets
             Guid? userId = null,
             decimal? minBalance = null,
             decimal? maxBalance = null,
-            bool hasLockedAmount = false,
+            bool? hasLockedAmount = false,
             string filter = null
         )
         {
@@ -74,7 +74,8 @@ namespace Lazy.Abp.WalletKit.Wallets
             return dbSet
                 .AsNoTracking()
                 .WhereIf(userId.HasValue, e => e.UserId == userId)
-                .WhereIf(hasLockedAmount, e => e.LockedAmount > 0)
+                .WhereIf(hasLockedAmount.HasValue && hasLockedAmount.Value, e => e.LockedAmount > 0)
+                .WhereIf(hasLockedAmount.HasValue && !hasLockedAmount.Value, e => e.LockedAmount == 0)
                 .WhereIf(minBalance.HasValue, e => e.Balance >= minBalance)
                 .WhereIf(maxBalance.HasValue, e => e.Balance < maxBalance);
         }

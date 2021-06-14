@@ -14,7 +14,7 @@ namespace Lazy.Abp.WalletKit.Wallets
             Guid? userId = null,
             decimal? minBalance = null,
             decimal? maxBalance = null,
-            bool hasLockedAmount = false,
+            bool? hasLockedAmount = false,
             string filter = null,
             CancellationToken cancellationToken = default
         );
@@ -26,7 +26,7 @@ namespace Lazy.Abp.WalletKit.Wallets
             Guid? userId = null,
             decimal? minBalance = null,
             decimal? maxBalance = null,
-            bool hasLockedAmount = false,
+            bool? hasLockedAmount = false,
             string filter = null,
             CancellationToken cancellationToken = default
         );

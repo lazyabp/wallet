@@ -7,16 +7,22 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Volo.Abp.Users;
 using System.Collections.Generic;
+using Lazy.Abp.WalletKit.WalletLogs;
 
 namespace Lazy.Abp.WalletKit.Wallets
 {
     public class WalletAppService : WalletKitAppService, IWalletAppService
     {
         private readonly IWalletRepository _repository;
-        
-        public WalletAppService(IWalletRepository repository)
+        private readonly WalletLogManager _walletLogManager;
+
+        public WalletAppService(
+            IWalletRepository repository,
+            WalletLogManager walletLogManager
+        )
         {
             _repository = repository;
+            _walletLogManager = walletLogManager;
         }
 
         [Authorize(WalletKitPermissions.Wallet.Default)]
@@ -47,10 +53,16 @@ namespace Lazy.Abp.WalletKit.Wallets
         }
 
         [Authorize(WalletKitPermissions.Wallet.Reset)]
-        public async Task<WalletDto> ResetAsync(Guid userId)
+        public async Task<WalletDto> ResetAsync(Guid userId, ResetReasonDto input)
         {
             var wallet = await _repository.GetByUserIdAsync(userId);
-            wallet.Reset();
+
+            if (wallet.Balance > 0)
+            {
+                wallet.Reset();
+
+                await _walletLogManager.WriteOutLogAsync(wallet.TenantId, wallet.UserId, "ResetWallet", wallet.Balance, 0, L["ResetWallet"], input.Reason);
+            }
 
             return ObjectMapper.Map<Wallet, WalletDto>(wallet);
         }

@@ -29,6 +29,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lazy.Abp.WalletKit.Web.Unif
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lazy.Abp.WalletKit.Web", "src\Lazy.Abp.WalletKit.Web\Lazy.Abp.WalletKit.Web.csproj", "{D98FBED9-8CE5-4291-B1DC-AC5744F304F8}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lazy.Abp.WalletKit.HttpApi.Host", "host\Lazy.Abp.WalletKit.HttpApi.Host\Lazy.Abp.WalletKit.HttpApi.Host.csproj", "{0ACC18C7-ABE1-454C-AACA-EB0CACCEC1BC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -79,6 +81,10 @@ Global
 		{D98FBED9-8CE5-4291-B1DC-AC5744F304F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D98FBED9-8CE5-4291-B1DC-AC5744F304F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D98FBED9-8CE5-4291-B1DC-AC5744F304F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0ACC18C7-ABE1-454C-AACA-EB0CACCEC1BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0ACC18C7-ABE1-454C-AACA-EB0CACCEC1BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0ACC18C7-ABE1-454C-AACA-EB0CACCEC1BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0ACC18C7-ABE1-454C-AACA-EB0CACCEC1BC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -95,6 +101,7 @@ Global
 		{F6AC8D4A-EDD7-4514-8E8A-5BCB019864DB} = {E400416D-2895-4512-9D17-90681EEC7E0A}
 		{00356F6B-E86B-4A0B-A0A6-0ED6CFD86B1E} = {E400416D-2895-4512-9D17-90681EEC7E0A}
 		{D98FBED9-8CE5-4291-B1DC-AC5744F304F8} = {649A3FFA-182F-4E56-9717-E6A9A2BEC545}
+		{0ACC18C7-ABE1-454C-AACA-EB0CACCEC1BC} = {E400416D-2895-4512-9D17-90681EEC7E0A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4324B3B4-B60B-4E3C-91D8-59576B4E26DD}

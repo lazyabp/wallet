@@ -18,6 +18,8 @@ namespace Lazy.Abp.WalletKit.RechargeProducts.Dtos
 
         public int SoldQuantity { get; set; }
 
+        public bool IsActive { get; set; }
+
         public string Description { get; set; }
 
         public int DisplayOrder { get; set; }

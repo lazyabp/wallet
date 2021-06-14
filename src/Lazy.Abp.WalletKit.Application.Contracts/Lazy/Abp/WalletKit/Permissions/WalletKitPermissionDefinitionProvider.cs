@@ -25,6 +25,7 @@ namespace Lazy.Abp.WalletKit.Permissions
             walletPermission.AddChild(WalletKitPermissions.Wallet.Reset, L("Permission:Reset"));
 
             var walletLogPermission = myGroup.AddPermission(WalletKitPermissions.WalletLog.Default, L("Permission:WalletLog"));
+            walletLogPermission.AddChild(WalletKitPermissions.WalletLog.Management, L("Permission:Management"));
 
             var withdrawAccountPermission = myGroup.AddPermission(WalletKitPermissions.WithdrawAccount.Default, L("Permission:WithdrawAccount"));
             withdrawAccountPermission.AddChild(WalletKitPermissions.WithdrawAccount.Create, L("Permission:Create"));

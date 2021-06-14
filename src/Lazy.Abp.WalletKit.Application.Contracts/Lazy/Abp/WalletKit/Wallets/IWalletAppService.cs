@@ -12,6 +12,6 @@ namespace Lazy.Abp.WalletKit.Wallets
 
         Task<PagedResultDto<WalletDto>> GetListAsync(WalletListRequestDto input);
 
-        Task<WalletDto> ResetAsync(Guid userId);
+        Task<WalletDto> ResetAsync(Guid userId, ResetReasonDto input);
     }
 }
